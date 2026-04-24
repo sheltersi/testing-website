@@ -1,11 +1,9 @@
-@extends('layouts.app')
-
-@section('title', __('Contact Us'))
-@section('meta_title', 'Contact SportAbility | Race Timing Quotes Southern Africa')
-@section('meta_description', 'Get a quote for race timing services across Southern Africa. We serve events in South
-    Africa, Namibia, Botswana, Zimbabwe, Zambia, Mozambique, Lesotho, Eswatini, and Malawi. Contact us for chip timing,
-    online registration and live tracking.')
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @include('partials.head')
+    <title>Contact SportAbility | Race Timing Quotes Southern Africa</title>
+    <meta name="description" content="Get a quote for race timing services across Southern Africa. We serve events in South Africa, Namibia, Botswana, Zimbabwe, Zambia, Mozambique, Lesotho, Eswatini, and Malawi. Contact us for chip timing, online registration and live tracking.">
     @push('styles')
         <style>
             .faq-answer {
@@ -649,10 +647,6 @@
         </div>
     </section>
 
-@endsection
-
-
-@push('scripts')
     @vite('resources/js/app.js')
     <script>
         // Translation data for client-side switching
@@ -1125,4 +1119,5 @@
             }
         });
     </script>
-@endpush
+</body>
+</html>
