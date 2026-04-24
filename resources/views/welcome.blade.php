@@ -224,7 +224,7 @@
                                     <label for="venue_country" class="block text-sm font-semibold text-accent mb-2"
                                         data-i18n="Country">{{ __('Country') }}</label>
                                     <select id="venue_country" name="venue_country" required
-                                        class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white transition duration-300 text-sm @error('venue_country') border-red-400 @enderror">
+                                        class="form-input @error('venue_country') border-red-400 @enderror">
                                         <option value="" data-i18n="Select Country">{{ __('Select Country') }}
                                         </option>
                                         <option value="Botswana"
@@ -263,7 +263,7 @@
                                         data-i18n="Phone Number">{{ __('Phone Number') }}</label>
                                     <div class="flex">
                                         <select id="phone_country_code" name="phone_country_code"
-                                            class="px-3 py-3.5 border border-r-0 border-gray-200 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white transition duration-300 text-sm">
+                                            class="form-input">
                                             <option value="+27"
                                                 {{ old('phone_country_code', '+27') == '+27' ? 'selected' : '' }}>🇿🇦 +27
                                             </option>
@@ -293,7 +293,7 @@
                                             </option>
                                         </select>
                                         <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
-                                            class="w-full px-4 py-3.5 border border-gray-200 rounded-r-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white transition duration-300"
+                                            class="form-input rounded-l-none border-l-0"
                                             placeholder="XX XXX XXXX">
                                     </div>
                                     <p id="phone-error" class="hidden mt-1 text-xs text-red-500"></p>
@@ -339,7 +339,7 @@
                                             data-i18n="Race Type">{{ __('Race Type') }}</span>
                                         <span data-i18n="*">{{ __('*') }}</span></label>
                                     <select id="race_type" name="race_type" required
-                                        class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white transition duration-300 @error('race_type') border-red-400 @enderror">
+                                        class="form-input @error('race_type') border-red-400 @enderror">
                                         <option value="" data-i18n="Select race type">{{ __('Select race type') }}
                                         </option>
                                         <option value="run" {{ old('race_type') == 'run' ? 'selected' : '' }}
@@ -367,7 +367,7 @@
                                     <label for="expected_capacity" class="block text-sm font-semibold text-accent mb-2"
                                         data-i18n="Expected Participants">{{ __('Expected Participants') }}</label>
                                     <select id="expected_capacity" name="expected_capacity"
-                                        class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white transition duration-300">
+                                        class="form-input">
                                         <option value="" data-i18n="Select range">{{ __('Select range') }}</option>
                                         <option value="1-50" {{ old('expected_capacity') == '1-50' ? 'selected' : '' }}>
                                             {{ __('1 - 50') }}</option>

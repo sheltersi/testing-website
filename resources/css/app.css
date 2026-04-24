@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
+@import 'tom-select/dist/css/tom-select.css';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -26,6 +27,9 @@
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
+
+    --color-primary: #2E7D32;
+    --color-primary-foreground: #ffffff;
 }
 
 @layer theme {
@@ -64,3 +68,101 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+/* Tom Select Customization */
+.form-input {
+    @apply w-full px-4 py-3.5 border border-gray-200 rounded-xl bg-white transition duration-300 text-sm;
+}
+
+.form-input:focus {
+    @apply outline-none border-primary;
+}
+
+.form-input:focus-visible {
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.form-input.is-invalid,
+.form-input.invalid {
+    @apply border-red-400;
+}
+
+.form-input.ts-wrapper.ts-control {
+    @apply w-full px-4 py-3.5 border border-gray-200 rounded-xl bg-white transition duration-300;
+}
+
+.ts-wrapper.form-input:focus-within,
+.ts-wrapper.ts-control.focus {
+    @apply outline-none border-primary;
+}
+
+.ts-wrapper.form-input input,
+.ts-wrapper.ts-control input {
+    @apply text-sm;
+}
+
+.ts-dropdown,
+.ts-dropdown.form-select {
+    @apply border border-gray-200 rounded-xl shadow-lg bg-white;
+}
+
+.ts-dropdown .ts-option,
+.ts-dropdown .ts-option label {
+    @apply text-sm text-gray-700;
+}
+
+.ts-dropdown .ts-option:hover,
+.ts-dropdown .ts-option.active {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--color-primary);
+}
+
+.ts-dropdown .ts-option.selected {
+    background-color: rgba(46, 125, 50, 0.2);
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.ts-control .ts-badge {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--color-primary);
+    @apply text-sm px-2 py-1 rounded-lg;
+}
+
+.ts-control .ts-remove {
+    @apply ml-1;
+    color: rgba(46, 125, 50, 0.6);
+}
+
+.ts-control .ts-remove:hover {
+    color: var(--color-primary);
+}
+
+.ts-wrapper.single .ts-control {
+    @apply cursor-pointer;
+}
+
+.ts-wrapper.multi .ts-control {
+    @apply cursor-text min-h-[44px];
+}
+
+.ts-wrapper.multi.has-items .ts-control {
+    @apply py-2 px-3;
+}
+
+/* Tom Select theme overrides */
+.ts-wrapper {
+    @apply rounded-xl;
+}
+
+.ts-control {
+    @apply rounded-xl border-gray-200;
+}
+
+.ts-dropdown {
+    @apply rounded-xl shadow-xl border-gray-200;
+}
+
+.ts-option {
+    @apply px-4 py-2.5;
+}
